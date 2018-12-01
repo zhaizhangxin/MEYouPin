@@ -1,0 +1,89 @@
+<!--pages/me/me.wxml-->
+<view class='top'>
+  <image class='me-bg' src='../../img/me-bg.png'></image> 
+  <view class='top-con'>
+    <view>{{data}}  {{day}}</view>
+    <view>
+      <button open-type='contact'>客服 </button>
+      <image src='../../img/icon-go.png'></image>
+    </view>   
+  </view>  
+  <button class='share' open-type='share'>分享到微信群+1~10<image  src='../../img/diamond1.png'></image></button>
+</view>
+
+<view class='signIn'>
+  <view class='signIn-con' wx:for="{{signInMsg.signCont}}" wx:key='{{index}}' >
+    <block>
+      <view class='signIn-btn signIn-action' wx:if="{{ index < signInMsg.sign_num }}">✔</view> 
+      <view class='signIn-btn {{ signInMsg.status == 0 ? "" : "signIn-action"}}' wx:elif="{{ index == signInMsg.sign_num && signInMsg.status == 1}}">✔</view> 
+      <block wx:else>
+        <view wx:if='{{index != 4 && index != 6 && index != 7}}' class='signIn-btn' data-index='{{index}}' bindtap='subSignIn'>{{item}}</view>
+        <view wx:if='{{index == 4 || index == 6}}' class='signIn-btn' data-index='{{index}}' bindtap='subSignIn'> <image src='../../img/box.png'></image></view>
+        <view wx:if='{{index == 7}}' class='signIn-btn signIn-last' data-index='{{index}}' bindtap='subSignIn'><text>最高</text>20</view>  
+      </block>          
+    </block>    
+    <block>
+      <view class='signIn-bottom' wx:if="{{ signInMsg.sign_num != index}}">{{index}}天</view>
+      <view class='signIn-bottom' wx:else>今天</view>
+    </block>    
+
+ 
+  </view>  
+</view>
+
+
+<view class='banner'>
+  <image src='../../img/banner4.png'></image>
+</view>
+
+<view class='exp'>
+  <view class='exp-tit'>
+    <view class='exp-tit-l'>
+      <text class='icon'></text>
+      <view>挖宝GO</view>
+    </view>
+    <image src=''></image>
+  </view>
+  
+  <view class='exp-con'>
+    <block wx:for='{{experience}}' wx:key='{{item.id}}'>
+      <navigator url='../recommend/recommend?id={{item.id}}'>
+        <view class='exp-con-l'>
+          <image class='exp-con-l-icon' src='{{item.icon}}'></image>
+          <view class='exp-con-l-tit'>
+            <view>{{item.name}}</view>
+            <view class='exp-con-l-diamond'><image src='../../img/diamond1.png'></image><text>{{item.reward}}</text></view>
+          </view>
+          
+        </view>
+
+        <view class='exp-con-r'>
+          <view>有品我来推荐</view>
+          <image src='../../img/icon-go.png'></image>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>
+<view class='exp-prompt' wx:if="{{experience == ''}}">
+  <image src='../../img/no_data.png'></image>
+  <view>有品暂时没有更多数据了</view> 
+  <view>努力寻觅中…</view>
+</view> 
+
+<view wx:if='{{modal}}'>
+  <view class='modal' wx:if='{{error_code == 0}}' >
+    <view class='modal-con'>
+      <image open-type='share' src='../../img/modal.png'></image>
+      <view class='modal-text'><text>+</text>{{modalData}}</view>
+      <image bindtap='close' src='../../img/close.png'></image>
+    </view>  
+  </view>
+  <view class='modal2' wx:else>
+    <view class='modal2-con'>
+      <image open-type='share' src='../../img/modal2.png'></image>
+      <view class='modal2-text'>{{modalData}}</view>
+      <image bindtap='close' src='../../img/close.png'></image>
+    </view>  
+  </view>
+</view>

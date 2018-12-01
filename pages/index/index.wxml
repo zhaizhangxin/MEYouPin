@@ -1,0 +1,129 @@
+<!--index.wxml-->
+<view class='login' wx:if="{{hasUserInfo}}" catchtouchmove='true'>
+  <image src='../../img/login.png'></image>
+  <button size='mini' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>立即体验</button>
+</view>
+ 
+<view class='top'>
+  <view class='top-con'>
+    <view class='userInfo'>
+      <open-data class='avatarUrl' type='userAvatarUrl'></open-data>
+      <view>         
+        <view class='nickName'><open-data type='userNickName'></open-data></view>
+        <view class='integral'><image src='../../img/diamond.png'></image><text>{{integral}}</text></view>
+      </view>     
+    </view>
+    <view class='me'>
+      <navigator  url='../me/me'>我的宝库</navigator>
+      <navigator  url='../mall/mall'>兑换商城</navigator>
+    </view>
+  </view> 
+</view>
+
+<view class='banner-swiper'>
+  <swiper indicator-dots='true' autoplay='true' circular='true' indicator-color='#fff' indicator-active-colo='#232321'>
+    <block wx:for="{{bannerMsg}}" wx:key="{{item.id}}">
+
+      <block wx:if='{{item.appid == ""}}'>
+        <navigator bindsuccess='adClick' data-id='{{item.id}}' data-index='{{index}}' url='../bannerAd/bannerAd?bannerUrl={{item.href}}'>
+          <swiper-item>
+            <image src='{{item.icon}}'></image>
+          </swiper-item>
+        </navigator> 
+      </block>
+
+      <block wx:else>
+        <navigator target='miniProgram' bindtap='adClick' app-id='{{item.appid}}' data-id='{{item.id}}' data-index='{{index}}' open-type="navigate" path="{{item.path}}" extra-data="{{item.extra_data}}">
+          <swiper-item>
+            <image src='{{item.icon}}'></image>
+          </swiper-item>
+        </navigator>
+      </block>
+      
+    </block>
+  </swiper>
+</view>
+
+
+
+<swiper class='roll-swiper' autoplay='true' interval='3000' circular='true' vertical='true'>
+  <block wx:for="{{rollMsg}}" wx:key="{{index}}" wx:if='{{item.avatar_url != ""}}'>
+    <swiper-item><image class='roll-avatar' src='{{item.avatar_url}}'></image>
+      <view class='roll-nickName'><text>{{item.nick_name}}</text></view>
+      <view>刚刚通过
+        <text>{{item.approach}}</text>，获得
+        <text>{{item.diamond}}</text>
+        <image class='roll-diamond' src='../../img/diamond1.png'></image>奖励
+      </view>
+    </swiper-item>
+  </block>  
+</swiper>
+
+
+<view class='card' wx:for="{{cardMsg}}" wx:if='{{item.status == 1}}' wx:key="{{item.id}}">
+
+  <view class='card-top'>
+    <view class='card-title'>
+      <image src='{{item.icon}}'></image>
+      <view>
+        <view class='card-name'>{{item.name}}</view>
+        <view class='card-brief'>{{item.brief}}</view>
+      </view>
+    </view>
+    <view class='card-bid'><text>奖励{{item.bid}}</text><image src='../../img/diamond1.png'></image></view>
+  </view>
+
+  <view class='card-btn'>
+    <navigator target='miniProgram' bindsuccess='adClick' app-id='{{item.appid}}' data-id='{{item.id}}' data-index='{{index}}' open-type="navigate" path="{{item.task_path}}" extra-data="{{item.extra_data}}">U品鉴</navigator>
+    <navigator url='../me/me'>我要推荐</navigator>
+    <navigator wx:if="{{item.path != ''}}" target='miniProgram' app-id='{{item.appid}}' open-type="navigate" path="{{item.path}}">点我领券</navigator>
+  </view>
+
+  <view class='card-rule'>
+    <view><image src='../../img/icon.png'></image></view> 
+    <text>{{item.rule}}</text>
+  </view>
+
+</view>
+
+<view class='card' wx:for="{{cardMsg}}" wx:if='{{item.status == 0}}' wx:key="{{item.id}}">
+
+  <view class='card-top'>
+    <view class='card-title'>
+      <image src='{{item.icon}}'></image>
+      <view>
+        <view class='card-name'>{{item.name}}</view>
+        <view class='card-brief'>{{item.brief}}</view>
+      </view>
+    </view>
+    <view class='card-bid card-bid-complete'>已领取</view>
+  </view>
+
+  <view class='card-btn'>
+    <navigator target='miniProgram'  app-id='{{item.appid}}' open-type="navigate" path="{{item.task_path}}" extra-data="{{item.extra_data}}">U品鉴</navigator>
+    <navigator url='../me/me'>我要推荐</navigator>
+    <navigator wx:if="{{item.path != ''}}" target='miniProgram' app-id='{{item.appid}}' open-type="navigate" path="{{item.path}}">点我领券</navigator>
+  </view>
+
+  <view class='card-rule'>
+    <view><image src='../../img/icon.png'></image></view> 
+    <text>{{item.rule}}</text>
+  </view>
+
+</view>
+
+<view class='card-prompt' wx:if="{{cardMsg == ''}}">
+  <image src='../../img/no_data.png'></image>
+  <view>有品暂时没有更多数据了</view> 
+  <view>努力寻觅中…</view>
+</view> 
+
+
+<view wx:if='{{modal}}' class='modal2' catchtouchmove='true'>  
+  <view class='modal2-con'>
+    <navigator url='../me/me'><image src='../../img/modal2.png'></image></navigator>
+    
+    <view class='modal2-text'>{{modalData}}</view>
+    <image class='close' bindtap='close' src='../../img/close.png'></image>
+  </view>   
+</view>

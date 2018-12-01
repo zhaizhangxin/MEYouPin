@@ -1,0 +1,50 @@
+<!--pages/mall/mall.wxml-->
+<image class='banner' src='../../img/mall-banner.png'></image>
+
+<view class='nav'>
+  <navigator class='nav-l' url='../orderDetail/orderDetail'>
+    <image class='nav-l-bg' src='../../img/mall-bg.png'></image>
+    <view class='nav-l-diamond'><image  src='../../img/diamond1.png'></image>{{integral}}</view>
+    <view>我的兑换记录</view>
+  </navigator>
+  <navigator class='nav-r' url='../index/index'>
+    <image src='../../img/mall-get.gif'></image>
+  </navigator>
+</view>
+
+<view class='ad'>
+  <block wx:for='{{adMsg}}' wx:key='{{index}}'>
+
+    <block wx:if='{{item.appid == ""}}'>
+      <navigator url='../bannerAd/bannerAd?bannerUrl={{item.href}}'>
+          <image src='{{item.img_url}}'></image>
+      </navigator> 
+    </block>
+    <block wx:else>
+      <navigator target='miniProgram' open-type="navigate" app-id='{{item.appid}}'  path="{{item.path}}" extra-data="{{item.extra_data}}">
+          <image src='{{item.img_url}}'></image>
+      </navigator>
+    </block>
+
+  </block>
+</view>
+
+<view class='list'>
+  <image class='list-title' src='../../img/mall-title.png'></image>
+  <view class='list-con' wx:for='{{listMsg}}' wx:key='{{index}}'>
+    <navigator url='../detail/detail?id={{item.id}}'>
+      <view class='list-con-img'>
+        <image src='{{item.img_url}}'></image>
+        <button hover-stop-propagation='true' catchtap='share' size='mini' open-type='share' data-id='{{item.id}}' data-img='{{item.img_url}}'>赚佣金+{{item.share_award}}</button>
+      </view>
+      <view class='list-con-tit'>
+        {{item.name}}
+      </view>
+      <view class='list-con-price'>
+        <image src='../../img/diamond1.png'></image>
+        <text>{{item.integral}}</text>
+        <text>￥{{item.price}}</text>
+      </view>
+    </navigator>
+  </view>
+</view>

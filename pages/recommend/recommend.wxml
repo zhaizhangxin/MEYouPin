@@ -1,0 +1,32 @@
+<!--pages/recommend/recommend.wxml-->
+
+<view class='con'>
+  <block wx:for='{{recommendMsg}}' wx:key='{{item.id}}'>
+    <view class='con-item {{item.id % 2 == 0 ? "flex-start" : "flex-end"}}' data-id='{{item.id}}' data-index='{{index}}' bindtap='getPraise'>
+      <view class='con-item-praise {{imgStatus[index] ? "praiseRun" : ""}}'  wx:if='{{item.id % 2 == 0 }}'>
+        <image src='{{imgStatus[index] ? "../../img/praise_1.png" : "../../img/praise_2.png"}}'></image> +{{item.num}}
+      </view>
+
+      <view class='con-item-text {{item.id % 2 == 0 ? "l-radius" : "r-radius"}} {{imgStatus[index] ? "praiseBg" : ""}}'>{{item.describe}}</view>
+      
+      <view class='con-item-praise {{imgStatus[index] ? "praiseRun" : ""}}' wx:if='{{item.id % 2 != 0 }}'>
+        <image src='{{imgStatus[index] ? "../../img/praise_1.png" : "../../img/praise_2.png"}}'></image> +{{item.num}}
+      </view>
+    </view>
+  </block>
+
+  <view class='btn'>
+    <button class='btn-1' bindtap='subPraise'>立即领取</button>
+    <navigator class='btn-2' url='../me/me'>推荐更多</navigator>
+  </view>
+  
+</view>
+
+<view wx:if='{{modal}}' class='modal2'>  
+  <view class='modal2-con'>
+    <image bindtap='close' src='../../img/modal2.png'></image>
+    
+    <view class='modal2-text'>推荐成功，{{modalData}}钻石已经收入囊中！</view>
+    <image class='close' bindtap='close' src='../../img/close.png'></image>
+  </view>   
+</view>

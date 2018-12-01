@@ -1,0 +1,144 @@
+/* pages/confirmOrder/confirmOrder.wxss */
+page{
+   background-color: #efeff4;
+}
+
+.address{
+  background-color: #fff;
+}
+.address-add{
+  height: 120rpx;
+  width: 690rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.address-add view:first-of-type{
+  margin-right: 10rpx;
+  font-weight: bold;
+}
+.line-address{
+  display: block;
+  width: 100%;
+  height: 3px;
+}
+.address-con{
+  margin:0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.address-con-detail{
+  padding: 40rpx 0;
+}
+.address-con-detail view:first-of-type{
+  font-size: 32rpx;
+  color: rgb(51, 51, 51);
+  margin-left: 36rpx;
+}
+.address-con-detail view:last-of-type{
+  margin-top:30rpx; 
+  font-size: 24rpx;
+  color:rgb(102, 102, 102)
+} 
+.address-con-detail view:last-of-type image{
+  width: 18rpx;
+  height: 26rpx;
+  margin-right: 18rpx;
+}
+.address-con-arrow image{
+  width: 14rpx;
+  height: 26rpx;
+}
+
+
+.detail{
+  background-color: #fff;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.detail-con{
+  display: flex;
+  align-items: center;
+  margin: 20rpx 30rpx;
+}
+.detail-con-l image{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+.detail-con-r view:nth-of-type(1){
+  font-size: 38rpx;
+  color: #333;
+  margin-bottom: 5px;
+}
+.detail-con-r view:nth-of-type(2){
+  font-size: 32rpx;
+  color: #E05D5D;
+}
+.detail-con-r view:nth-of-type(2) image{
+  width: 32rpx;
+  height: 28rpx;
+  margin-right: 3px;
+}
+.detail-style,.detail-me{
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx;
+  color: rgb(51, 51, 51);
+  font-size:28rpx;
+}
+.detail-me text:last-of-type{
+  color: #E05D5D;
+}
+
+
+.detail-btn{
+  width: 100%;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+.detail-btn view{
+  font-size: 34rpx;
+  color: rgb(51, 51, 51);
+  margin-left: 30rpx;
+}
+.detail-btn view text{
+  color: rgb(232, 54, 42)
+}
+button::after{
+  border: none;
+}
+.detail-btn button{
+  margin: 0;
+  padding: 0 50rpx;
+  font-size: 34rpx;
+  color: #fff;
+  height: 98rpx;
+  line-height: 98rpx;
+  background-color: rgb(232, 54, 42);
+  border-radius: 0;
+}
+.detail-btn image{
+  width: 32rpx;
+  height: 28rpx;
+  margin-right: 3px;
+}
+
+
+
+.prompt{
+  font-size: 26rpx;
+  color: #ccc;
+  text-align: center;
+  margin-top: 30rpx;
+  margin-bottom: 120rpx;
+}
+

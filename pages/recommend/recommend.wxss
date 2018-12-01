@@ -1,0 +1,137 @@
+/* pages/recommend/recommend.wxss */
+.con-item{
+  width:690rpx;
+  height:80rpx;
+  margin:40rpx auto 0;
+  display:flex;
+  align-items: center;
+}
+.flex-start{
+  justify-content:flex-start;
+  
+}
+.flex-end{
+  justify-content:flex-end;
+}
+
+.con-item-text{
+  max-width: 690rpx;
+  overflow: hidden;
+  height:80rpx;
+  line-height:80rpx;
+  background-color:#eee;
+  border-radius:40rpx;
+  padding:0 20rpx;
+  font-size:30rpx;
+  color:#666;
+  margin:0 20rpx;
+  transition:all 0.6s; 
+}
+.praiseBg{
+  background-color:#f9e9d3;
+  color:#333;
+}
+.l-radius{
+  border-top-left-radius: 0; 
+}
+.r-radius{
+   border-top-right-radius: 0;
+}
+
+.con-item-praise{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  font-size:24rpx;
+  color:#666;
+  
+}
+.praiseRun{
+  animation: run 0.6s; 
+}
+@keyframes run{
+  0% {transform:scale(1);}
+  50% {transform:scale(1.2);}
+  100% {transform:scale(1);}
+}
+
+.con-item-praise image{
+  width:38rpx;
+  height:34rpx;
+  display: block;
+  margin: 0 auto;
+}
+.btn{
+  width:690rpx;
+  margin:50rpx auto;
+  display:flex;
+  justify-content:space-between;
+}
+button::after{
+  border:none;
+}
+.btn-1{
+  background:none;
+  margin:0;
+  padding:0;
+  width:313rpx;
+  height:80rpx;
+  line-height:80rpx;
+  color:#e5b978;
+  font-size:32rpx;
+  border:1px solid #f4d4a7;
+  border-radius:8rpx;
+}
+.btn-2{
+  width:337rpx;
+  height:80rpx;
+  line-height:80rpx;
+  color:#333;
+  font-size:32rpx;
+  text-align: center;
+  background-color:#f4d4a7;
+  border-radius:8rpx;
+}
+
+/*modal  */
+.modal2{
+  position:absolute;
+  top: 0;
+  left: 0;
+  background:rgba(0,0,0,0.5);
+  width: 100%;
+  height : 100vh;
+  transition:all 0.5s;
+  transform:scale(1.1);
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+.modal2-con{
+  width:604rpx;
+  height: 626rpx;
+  /* margin: 200rpx auto 0; */
+  position: relative;
+}
+
+.modal2-con image:first-child{
+  width:604rpx;
+  height: 626rpx;
+}
+.modal2-con .close{
+  display: block;
+  width:60rpx;
+  height: 60rpx;
+  margin: 20rpx auto;
+}
+.modal2-text{
+  position: absolute;
+  bottom:170rpx;
+  left:50%;
+  transform: translateX(-50%);
+  color: #ffaa79;
+  font-size: 26rpx;
+  font-weight: bold;
+  text-align: center;
+}

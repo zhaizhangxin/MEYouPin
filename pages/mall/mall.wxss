@@ -1,0 +1,153 @@
+/* pages/mall/mall.wxss */
+page{
+  background-color: #efeff4;
+}
+
+.banner{
+  margin: 30rpx;
+  width: 690rpx;
+  height: 300rpx;
+}
+
+
+/* 
+ *nav
+ */
+ .nav{
+   margin:0 30rpx;
+   display: flex;
+   justify-content:space-between;
+ }
+ .nav navigator{
+   position: relative;
+   width: 330rpx;
+   height: 120rpx;
+   box-shadow: 0 4px 8px rgba(153, 153, 153, 0.5);
+   border-radius: 20rpx;
+   color: #999;
+   font-size: 28rpx;
+   text-align: center;
+ }
+ .nav-l-bg{
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 330rpx;
+   height: 120rpx;
+   border-radius: 20rpx;
+   z-index: -1;
+
+ }
+ .nav-l-diamond {
+   font-size: 38rpx;
+   color: #FF322B;
+   margin-top:15rpx; 
+ }
+ .nav-l-diamond image{
+   width: 32rpx;
+   height: 28rpx;
+   margin-right: 3px;
+ }
+
+.nav-r image{
+  width: 330rpx;
+  height: 120rpx;
+}
+
+/* 
+ *ad
+ */
+ .ad {
+   margin: 30rpx 30rpx 27rpx;
+   overflow: hidden;
+ }
+ .ad navigator{
+
+   float: left;
+ }
+ .ad navigator:nth-of-type(1) image{
+   width: 298rpx;
+   height: 300rpx;
+ }
+.ad navigator:nth-of-type(2) image,.ad navigator:nth-of-type(3) image{
+   display: block;
+   width: 388rpx;
+   height: 148rpx;
+   margin-left: 4rpx;
+}
+.ad navigator:nth-of-type(3) image{
+  margin-top: 4rpx;
+}
+
+
+/* 
+ *list
+ */
+
+.list-title{
+  display: block;
+  width: 251rpx;
+  height: 78rpx;
+  margin: 0 auto;
+}
+.list-con{
+  width: 330rpx;
+  background-color:#fff; 
+  margin:0 0 30rpx 30rpx; 
+  border-radius: 20rpx;
+  float: left;
+}
+.list-con:nth-of-type(1),.list-con:nth-of-type(2){
+  margin-top: 6rpx;
+}
+.list-con navigator{
+  margin: 25rpx;
+}
+.list-con-img image{
+  width: 280rpx;
+  height: 280rpx;
+}
+button::after{
+  border: none
+}
+.list-con-img{
+  position: relative;
+}
+.list-con-img button{
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 26rpx;
+  color: #AE800A;
+  background-image:  linear-gradient(-170deg, #FFFDE5 0%, #E0CCA0 100%);
+  margin: 0;
+  padding: 0;
+  border-radius: 0 0 0 10rpx;
+  overflow: hidden;
+}
+.list-con-tit{
+  font-size: 32rpx;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 2px 0;
+}
+.list-con-price image{
+  width: 32rpx;
+  height: 28rpx;
+}
+.list-con-price text:nth-of-type(1){
+  font-size: 32rpx;
+  color: #FF4943; 
+  margin: 0 2px;
+}
+.list-con-price text:nth-of-type(2){
+  font-size: 26rpx;
+  color: #999999;
+  float: right;
+  margin: 14rpx 10rpx 0 0;
+}

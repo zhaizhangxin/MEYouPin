@@ -1,0 +1,27 @@
+<!--pages/orderStatus/orderStatus.wxml-->
+<view class='top'>
+  <image class='top-banner' src='../../img/orderStatus-banner.png'></image>
+  <view class='top-con'><image src='../../img/zs-b.png'></image>剩余<text>{{integral}}</text></view>
+
+  <navigator url='../integralDetail/integralDetail' class='top-fixed'><image src='../../img/mx.png'></image></navigator>
+</view>
+
+<view class='list' wx:for='{{listMsg}}' wx:key='{{index}}'>
+  <view class='list-con'>
+    <view class='list-con-left'>
+      <view class='list-con-l'><image src='{{item.snap_product.img_url}}'></image></view>
+      <view class='list-con-r'>
+        <view>{{item.snap_product.name}}</view>
+        <view><image src='../../img/diamond1.png'></image>{{item.snap_product.price}}</view>
+        <view>{{item.time}}兑换</view>
+      </view>
+    </view>
+    
+    <view style='color:{{item.color}}'>{{item.type}}</view>
+  </view>
+</view>
+<view class='exp-prompt' wx:if="{{listMsg == ''}}">
+  <image src='../../img/no_data.png'></image>
+  <view>有品暂时没有更多数据了</view> 
+  <view>努力寻觅中…</view>
+</view> 

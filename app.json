@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bannerAd/bannerAd",
+    "pages/recommend/recommend",
+    "pages/me/me",
+    "pages/mall/mall",
+    "pages/detail/detail",
+    "pages/confirmOrder/confirmOrder",
+    "pages/orderDetail/orderDetail",
+    "pages/integralDetail/integralDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "dart",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "觅-me有品",
+    "navigationBarTextStyle": "black"
+  },
+  "navigateToMiniProgramAppIdList":[
+    "wxb19a236e51a8d248",
+    "wx04ae6db5ac8838c8",
+    "wxd7c5b7d77ff1b238",
+    "wxa42959523195f527",
+    "wxefe8997276c7a7d4",
+    "wxa331708430664298",
+    "wx23c7f38689be4392",
+    "wxd2b9331ac904b5de",
+    "wxe784b2d26d254912",
+    "wxc021569276c9f0ec"
+  ]
+}

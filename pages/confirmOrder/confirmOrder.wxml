@@ -1,0 +1,51 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+<view class='address' bindtap='chooseAddress'>
+  <block  wx:if="{{orderMsg.address.telNumber == null || orderMsg.address.telNumber == ''}}">
+    <view class='address-add'>
+      <view>+</view>
+      <view>新建地址</view>  
+    </view>  
+  </block>
+  <block wx:else> 
+    <view class='address-con'>
+      <view class='address-con-detail'>
+        <view>{{orderMsg.address.userName}} {{orderMsg.address.telNumber}}</view>
+        <view><image src='../../img/address-icon.png'></image>{{orderMsg.address.provinceName}}{{orderMsg.address.cityName}}{{orderMsg.address.countyName}} {{orderMsg.address.detailInfo}}</view>
+      </view>
+      <view class='address-con-arrow'>
+        <image src='../../img/me-arrow.png'></image>
+      </view>
+    </view>
+  </block>
+  <image class='line-address' src='../../img/line-address.png'></image>
+</view>
+
+<view class='detail'>
+
+  <view class='detail-con'>
+    <view class='detail-con-l'>
+      <image src='{{orderMsg.img_url}}'></image>
+    </view>
+    <view class='detail-con-r'>
+      <view>{{orderMsg.name}}</view>
+      <view><image src='../../img/diamond1.png'></image>{{orderMsg.integral}}</view>
+    </view>
+  </view>
+
+  <view class='detail-style'>
+    <text>配送方式</text>
+    <text>快递发货 免邮</text>
+  </view>
+
+  <view class='detail-me'>
+    <text>我的钻石</text>
+    <text>{{orderMsg.user_integral}}</text>
+  </view>
+</view>
+
+<view class='prompt'>虚拟商品我们将直接与地址所留手机号联系发放</view>
+
+<view class='detail-btn'>
+  <view>实付：<image src='../../img/diamond1.png'></image><text>{{orderMsg.integral}}</text></view>
+  <button bindtap='subOrder'>确认订单</button>
+</view>

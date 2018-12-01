@@ -1,0 +1,14 @@
+<!--pages/integralDetail/integralDetail.wxml-->
+<view class='list' wx:for='{{listMsg}}' wx:key='{{index}}'>
+  <view class='list-l'>
+    <view>{{item.type}}</view>
+    <view>{{item.create_time}}</view>
+  </view>
+  <view class='list-r' style='color:{{item.diamond > 0 ? "#FF322B":"#4caf50" }}'><image src='../../img/diamond1.png'></image>{{item.diamond}}</view>
+</view>
+
+<view class='exp-prompt' wx:if="{{listMsg == ''}}">
+  <image src='../../img/no_data.png'></image>
+  <view>有品暂时没有更多数据了</view> 
+  <view>努力寻觅中…</view>
+</view> 

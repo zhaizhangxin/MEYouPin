@@ -1,0 +1,130 @@
+/* pages/integralDetail/integralDetail.wxss */
+page{background-color: #efeff4;}
+
+/* 
+ * list
+ */
+
+.list{
+  background-color: #fff;
+  margin: 10rpx 0;
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list-l view:first-of-type{
+  font-size: 28rpx;
+  color: #333;
+}
+.list-l view:last-of-type{
+  font-size: 20rpx;
+  color: #666;
+  margin-top: 5px;
+}
+.list-r {
+  font-size: 32rpx;
+}
+.list-r image{
+  width: 32rpx;
+  height: 28rpx;
+  margin-right: 3px;
+}
+
+
+/* exp */
+.exp{
+  width:690rpx;
+  margin: 20rpx auto 0;
+}
+.exp-tit{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.exp-tit-l{
+  height:32rpx;
+  line-height:32rpx;
+  display:flex;
+  overflow:hidden;
+}
+.exp-tit-l .icon{
+  width:6rpx;
+  height:28rpx;
+  background-color:#f4d4a7;
+  border-radius:3rpx;
+}
+.exp-tit-l view{
+  font-size:32rpx;
+  color:#333;
+  font-weight:bold;
+  margin-left:14rpx;
+}
+.exp-tit image{
+  width:80rpx;
+  height:80rpx;
+}
+.exp-con navigator{
+  display:flex;
+  justify-content:space-between;
+  padding:40rpx 0;
+  border-bottom:1px solid #eee;
+}
+.exp-con-l,.exp-con-r{
+  display:flex;
+  align-items:center;
+}
+.exp-con-l-icon{
+  width:78rpx;
+  height:78rpx;
+  border-radius:37rpx;
+}
+.exp-con-l-tit{ 
+  margin-left:20rpx;
+}
+.exp-con-l-tit view{
+  font-size:30rpx;
+  color:#333;
+}
+.exp-con-l-diamond{
+  height: 30rpx;
+  line-height:30rpx;
+  display: flex;
+  align-items:center;
+  background-color:#f9e9d3;
+  border-radius:15rpx;
+  margin-top: 8rpx;
+  float:left; 
+}
+.exp-con-l-diamond image{
+  width:24rpx;
+  height:21rpx;
+  padding:0 6rpx;
+}
+.exp-con-l-diamond text{
+  font-size:24rpx;
+  color:#ff3535;
+  padding-right:12rpx;
+}
+.exp-con-r image{
+  width:14rpx;
+  height:26rpx;
+}
+.exp-con-r view{
+  font-size:26rpx;
+  color:#666;
+  margin-right:20rpx;
+}
+.exp-prompt{
+  width:100%;
+  text-align:center;
+  margin-top:50rpx;
+  font-size:24rpx;
+  color:#ccc;
+}
+.exp-prompt image{
+  display: block;
+  width: 234rpx;
+  height: 196rpx;
+  margin: 0 auto;
+}

@@ -1,0 +1,32 @@
+<!--pages/detail/detail.wxml-->
+<view class='top'>
+  <image class='top-banner' src='{{msg.detail_img}}'></image>
+  <view class='top-con'>
+    <view class='top-con-l'>
+      <view>{{msg.name}}</view>
+      <view>
+        <image src='../../img/diamond1.png'></image>
+        <text class='top-con-l-t1'>{{msg.integral}}</text>
+        <text class='top-con-l-t2'>￥{{msg.price}}</text>
+      </view>
+    </view>
+    <view class='top-con-r'>库存：{{msg.inv}}</view>
+  </view>
+</view>
+
+
+<view class='detail'>
+  <image src='../../img/detail-title.png'></image>
+  <view>
+    {{msg.detail}}
+  </view>
+</view>
+
+<block wx:if='{{show}}'>
+  <image class='btn-nav' src='../../img/bt-on.png'></image>
+</block>
+<block wx:else>
+  <navigator open-type='redirect' class='btn-nav' url='../confirmOrder/confirmOrder?id={{options.id}}'>
+    <image  src='../../img/bt.png'></image>
+  </navigator>
+</block>
